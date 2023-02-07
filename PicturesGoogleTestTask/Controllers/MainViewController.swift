@@ -13,9 +13,10 @@ final class MainViewController: UIViewController {
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
-    // MARK: Model
-    
     weak var timer: Timer?
+    
+    // MARK: Model
+
     var imageModel: ImageModel?
     
     // MARK:  Methods Life Cicle
@@ -23,9 +24,23 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: Network
+    
+   private func fetchImage(with request: String) {
+       NetworkManager.shared.parseImage(urlString: Constants.url.rawValue + request + Constants.key.rawValue) { [weak self] result in
+            switch result {
+            case .success(let success):
+                self?.imageModel = success
+                self?.imagesCollectionView.reloadData()
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
 }
 
-    // MARK: UICollectionViewDataSource, UICollectionViewDelegate
+// MARK: UICollectionViewDataSource, UICollectionViewDelegate
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,9 +54,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.mainImage.image = nil
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "nextVC", sender: nil)
+
+    }
 }
 
-    // MARK: SearchBarDelegate
+// MARK: SearchBarDelegate
 
 extension MainViewController: UISearchBarDelegate {
     
@@ -50,17 +70,8 @@ extension MainViewController: UISearchBarDelegate {
         if searchText != ""  {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
-                NetworkManager.shared.parseImage(urlString: "https://serpapi.com/search.json?tbm=isch&ijn=0&api_key=23c8d1f8c626a73431cc5c8716e8c21c7056ad11d059936d40efea8bdc8acb62&q=\(searchText)") { result in
-                    switch result {
-                    case .success(let success):
-                        self?.imageModel = success
-                        self?.imagesCollectionView.reloadData()
-                    case .failure(let failure):
-                        print(failure.localizedDescription)
-                    }
-                }
+                self?.fetchImage(with: searchText)
             })
         }
     }
-    
 }

@@ -10,7 +10,6 @@ import Foundation
 final class NetworkManager {
     
      static let shared = NetworkManager()
-//    let string = "https://serpapi.com/search.json?tbm=isch&ijn=0&api_key=23c8d1f8c626a73431cc5c8716e8c21c7056ad11d059936d40efea8bdc8acb62&q=5"
     
     func parseImage(urlString: String, completion: @escaping ( Result <ImageModel, Error> ) -> Void ) {
         guard let url = URL(string: urlString) else { return }
@@ -32,5 +31,4 @@ final class NetworkManager {
         }
         .resume()
     }
-    
 }

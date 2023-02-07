@@ -82,11 +82,60 @@
                     <navigationItem key="navigationItem" title="Search Image" id="qn8-F6-X2v"/>
                     <connections>
                         <outlet property="imagesCollectionView" destination="cVp-G9-NuF" id="Ga4-S2-hLl"/>
+                        <segue destination="Jf6-NA-hwa" kind="show" identifier="nextVC" id="g5T-OU-jcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013.6" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="794" y="-2"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Dq-u4-4Dv">
+            <objects>
+                <viewController id="Jf6-NA-hwa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0eN-uN-rgH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Cg-ZR-hzE">
+                                <rect key="frame" x="16" y="64" width="343" height="503"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kA-8S-glR">
+                                <rect key="frame" x="16" y="612" width="62" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMi-g7-UT6">
+                                <rect key="frame" x="299.5" y="612" width="59.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C6-TL-DyH">
+                                <rect key="frame" x="139" y="581" width="97" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open site"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3HD-cz-ZgA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6C6-TL-DyH" firstAttribute="top" secondItem="6Cg-ZR-hzE" secondAttribute="bottom" constant="14" id="1g9-ae-Mjx"/>
+                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="trailing" secondItem="bMi-g7-UT6" secondAttribute="trailing" constant="16" id="75i-zc-B6q"/>
+                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="top" secondItem="3HD-cz-ZgA" secondAttribute="top" constant="20" id="ER4-Ow-SA5"/>
+                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="leading" secondItem="3HD-cz-ZgA" secondAttribute="leading" constant="16" id="RJO-4U-Fhw"/>
+                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="bottom" secondItem="bMi-g7-UT6" secondAttribute="bottom" constant="20" id="WPT-qX-XuC"/>
+                            <constraint firstItem="6C6-TL-DyH" firstAttribute="centerX" secondItem="6Cg-ZR-hzE" secondAttribute="centerX" id="ho9-Ih-71G"/>
+                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="bottom" secondItem="6C6-TL-DyH" secondAttribute="bottom" constant="51" id="mNU-6L-Ft7"/>
+                            <constraint firstItem="8kA-8S-glR" firstAttribute="leading" secondItem="3HD-cz-ZgA" secondAttribute="leading" constant="16" id="t5y-e4-BZ2"/>
+                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="bottom" secondItem="8kA-8S-glR" secondAttribute="bottom" constant="20" id="w84-y2-Qrp"/>
+                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="trailing" secondItem="6Cg-ZR-hzE" secondAttribute="trailing" constant="16" id="zA9-31-jfD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="26h-1o-dBn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RaL-Rn-pXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="-2.2488755622188905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SJb-pK-ZlS">

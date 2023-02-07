@@ -1,0 +1,21 @@
+//
+//  ImageModel.swift
+//  PicturesGoogleTestTask
+//
+//  Created by Артем Орлов on 07.02.2023.
+//
+
+struct ImageModel: Decodable {
+    let imagesResults: [ImageResult]
+    
+    enum CodingKeys: String, CodingKey {
+        case imagesResults = "images_results"
+    }
+}
+
+struct ImageResult: Decodable {
+    let position: Int
+    let thumbnail: String
+    let link: String
+    let original: String
+}

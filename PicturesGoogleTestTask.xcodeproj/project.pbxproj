@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		003C0F5629911D7F002EFC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5529911D7F002EFC41 /* AppDelegate.swift */; };
 		003C0F5829911D7F002EFC41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5729911D7F002EFC41 /* SceneDelegate.swift */; };
-		003C0F5A29911D7F002EFC41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5929911D7F002EFC41 /* ViewController.swift */; };
+		003C0F5A29911D7F002EFC41 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5929911D7F002EFC41 /* MainViewController.swift */; };
 		003C0F5D29911D7F002EFC41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003C0F5B29911D7F002EFC41 /* Main.storyboard */; };
 		003C0F5F29911D80002EFC41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003C0F5E29911D80002EFC41 /* Assets.xcassets */; };
 		003C0F6229911D80002EFC41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003C0F6029911D80002EFC41 /* LaunchScreen.storyboard */; };
+		00570EA729925B4000291C18 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00570EA629925B4000291C18 /* ImageModel.swift */; };
+		00570EAB2992694B00291C18 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00570EAA2992694B00291C18 /* NetworkManager.swift */; };
+		00570EB129926B3100291C18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00570EB029926B3100291C18 /* Constants.swift */; };
+		00570EB429926C8A00291C18 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00570EB329926C8A00291C18 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		003C0F5229911D7F002EFC41 /* PicturesGoogleTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicturesGoogleTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003C0F5529911D7F002EFC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003C0F5729911D7F002EFC41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		003C0F5929911D7F002EFC41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		003C0F5929911D7F002EFC41 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		003C0F5C29911D7F002EFC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003C0F5E29911D80002EFC41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003C0F6129911D80002EFC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		003C0F6329911D80002EFC41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00570EA629925B4000291C18 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		00570EAA2992694B00291C18 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		00570EB029926B3100291C18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00570EB329926C8A00291C18 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,75 @@
 		003C0F5429911D7F002EFC41 /* PicturesGoogleTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				003C0F5529911D7F002EFC41 /* AppDelegate.swift */,
-				003C0F5729911D7F002EFC41 /* SceneDelegate.swift */,
-				003C0F5929911D7F002EFC41 /* ViewController.swift */,
-				003C0F5B29911D7F002EFC41 /* Main.storyboard */,
-				003C0F5E29911D80002EFC41 /* Assets.xcassets */,
-				003C0F6029911D80002EFC41 /* LaunchScreen.storyboard */,
-				003C0F6329911D80002EFC41 /* Info.plist */,
+				00570EAE2992697B00291C18 /* Controllers */,
+				00570EAD2992697400291C18 /* View */,
+				00570EA92992693800291C18 /* Services */,
+				00570EA829925B4300291C18 /* Model */,
+				00570EAC2992696900291C18 /* App */,
+				00570EAF29926A4400291C18 /* Resurces */,
 			);
 			path = PicturesGoogleTestTask;
+			sourceTree = "<group>";
+		};
+		00570EA829925B4300291C18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00570EA629925B4000291C18 /* ImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00570EA92992693800291C18 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00570EAA2992694B00291C18 /* NetworkManager.swift */,
+				00570EB029926B3100291C18 /* Constants.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		00570EAC2992696900291C18 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				003C0F5529911D7F002EFC41 /* AppDelegate.swift */,
+				003C0F5729911D7F002EFC41 /* SceneDelegate.swift */,
+				003C0F6329911D80002EFC41 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		00570EAD2992697400291C18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				003C0F5B29911D7F002EFC41 /* Main.storyboard */,
+				003C0F6029911D80002EFC41 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00570EAE2992697B00291C18 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				003C0F5929911D7F002EFC41 /* MainViewController.swift */,
+				00570EB229926B7300291C18 /* Cell */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		00570EAF29926A4400291C18 /* Resurces */ = {
+			isa = PBXGroup;
+			children = (
+				003C0F5E29911D80002EFC41 /* Assets.xcassets */,
+			);
+			path = Resurces;
+			sourceTree = "<group>";
+		};
+		00570EB229926B7300291C18 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00570EB329926C8A00291C18 /* ImageCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003C0F5A29911D7F002EFC41 /* ViewController.swift in Sources */,
+				003C0F5A29911D7F002EFC41 /* MainViewController.swift in Sources */,
 				003C0F5629911D7F002EFC41 /* AppDelegate.swift in Sources */,
+				00570EAB2992694B00291C18 /* NetworkManager.swift in Sources */,
 				003C0F5829911D7F002EFC41 /* SceneDelegate.swift in Sources */,
+				00570EA729925B4000291C18 /* ImageModel.swift in Sources */,
+				00570EB429926C8A00291C18 /* ImageCell.swift in Sources */,
+				00570EB129926B3100291C18 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9FSXFWG34;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PicturesGoogleTestTask/Info.plist;
+				INFOPLIST_FILE = PicturesGoogleTestTask/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +389,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9FSXFWG34;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PicturesGoogleTestTask/Info.plist;
+				INFOPLIST_FILE = PicturesGoogleTestTask/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

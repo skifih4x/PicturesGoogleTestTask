@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-G9-NuF">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="20" y="100" width="335" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="MU2-Nl-fAG">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="MU2-Nl-fAG">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="image" id="ibS-cy-Gbq" customClass="ImageCell" customModule="PicturesGoogleTestTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="image" id="ibS-cy-Gbq" customClass="ImageCell" customModule="PicturesGoogleTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tuZ-7N-JjR">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -40,6 +40,11 @@
                                                         <constraint firstAttribute="height" constant="100" id="Hdf-Er-VmT"/>
                                                         <constraint firstAttribute="width" constant="100" id="tlD-v5-BdS"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -70,10 +75,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cVp-G9-NuF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Csv-cP-weJ"/>
+                            <constraint firstItem="cVp-G9-NuF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Csv-cP-weJ"/>
                             <constraint firstItem="3sG-jP-OTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JNB-KQ-IzO"/>
                             <constraint firstItem="cVp-G9-NuF" firstAttribute="top" secondItem="3sG-jP-OTb" secondAttribute="bottom" id="ON3-TS-qmK"/>
-                            <constraint firstItem="cVp-G9-NuF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cY1-Dw-CcL"/>
+                            <constraint firstItem="cVp-G9-NuF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="cY1-Dw-CcL"/>
                             <constraint firstItem="3sG-jP-OTb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="evT-13-KuD"/>
                             <constraint firstItem="3sG-jP-OTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="riE-x5-GN3"/>
                             <constraint firstItem="cVp-G9-NuF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wEL-6h-0vp"/>
@@ -87,55 +92,105 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="-2"/>
+            <point key="canvasLocation" x="809" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Image View Controller-->
         <scene sceneID="8Dq-u4-4Dv">
             <objects>
-                <viewController id="Jf6-NA-hwa" sceneMemberID="viewController">
+                <viewController id="Jf6-NA-hwa" customClass="DetailImageViewController" customModule="PicturesGoogleTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0eN-uN-rgH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Cg-ZR-hzE">
-                                <rect key="frame" x="16" y="64" width="343" height="503"/>
+                                <rect key="frame" x="16" y="64" width="343" height="502"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kA-8S-glR">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kA-8S-glR">
                                 <rect key="frame" x="16" y="612" width="62" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="nextBackButton:" destination="Jf6-NA-hwa" eventType="touchUpInside" id="Ib4-dz-jmO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMi-g7-UT6">
                                 <rect key="frame" x="299.5" y="612" width="59.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <connections>
+                                    <action selector="nextBackButton:" destination="Jf6-NA-hwa" eventType="touchUpInside" id="o8z-qN-ijm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C6-TL-DyH">
                                 <rect key="frame" x="139" y="581" width="97" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Open site"/>
+                                <connections>
+                                    <action selector="openSiteButton:" destination="Jf6-NA-hwa" eventType="touchUpInside" id="ufJ-RQ-9vJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3HD-cz-ZgA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6C6-TL-DyH" firstAttribute="top" secondItem="6Cg-ZR-hzE" secondAttribute="bottom" constant="14" id="1g9-ae-Mjx"/>
                             <constraint firstItem="3HD-cz-ZgA" firstAttribute="trailing" secondItem="bMi-g7-UT6" secondAttribute="trailing" constant="16" id="75i-zc-B6q"/>
-                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="top" secondItem="3HD-cz-ZgA" secondAttribute="top" constant="20" id="ER4-Ow-SA5"/>
-                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="leading" secondItem="3HD-cz-ZgA" secondAttribute="leading" constant="16" id="RJO-4U-Fhw"/>
+                            <constraint firstItem="6C6-TL-DyH" firstAttribute="centerX" secondItem="0eN-uN-rgH" secondAttribute="centerX" id="9Cq-q3-cfH"/>
+                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="top" secondItem="3HD-cz-ZgA" secondAttribute="top" constant="20" id="9Qc-Hp-gKd"/>
+                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="trailing" secondItem="6Cg-ZR-hzE" secondAttribute="trailing" constant="16" id="V54-tL-BOU"/>
                             <constraint firstItem="3HD-cz-ZgA" firstAttribute="bottom" secondItem="bMi-g7-UT6" secondAttribute="bottom" constant="20" id="WPT-qX-XuC"/>
-                            <constraint firstItem="6C6-TL-DyH" firstAttribute="centerX" secondItem="6Cg-ZR-hzE" secondAttribute="centerX" id="ho9-Ih-71G"/>
+                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="centerX" secondItem="0eN-uN-rgH" secondAttribute="centerX" id="aTG-lh-90Q"/>
+                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="leading" secondItem="3HD-cz-ZgA" secondAttribute="leading" constant="16" id="gAT-PJ-AUR"/>
+                            <constraint firstItem="6Cg-ZR-hzE" firstAttribute="bottom" secondItem="6C6-TL-DyH" secondAttribute="bottom" constant="-50" id="kwk-be-RVC"/>
                             <constraint firstItem="3HD-cz-ZgA" firstAttribute="bottom" secondItem="6C6-TL-DyH" secondAttribute="bottom" constant="51" id="mNU-6L-Ft7"/>
                             <constraint firstItem="8kA-8S-glR" firstAttribute="leading" secondItem="3HD-cz-ZgA" secondAttribute="leading" constant="16" id="t5y-e4-BZ2"/>
                             <constraint firstItem="3HD-cz-ZgA" firstAttribute="bottom" secondItem="8kA-8S-glR" secondAttribute="bottom" constant="20" id="w84-y2-Qrp"/>
-                            <constraint firstItem="3HD-cz-ZgA" firstAttribute="trailing" secondItem="6Cg-ZR-hzE" secondAttribute="trailing" constant="16" id="zA9-31-jfD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="26h-1o-dBn"/>
+                    <connections>
+                        <outlet property="detailImage" destination="6Cg-ZR-hzE" id="erQ-BP-DjC"/>
+                        <segue destination="Byf-VU-ovp" kind="presentation" identifier="a" id="c7f-u2-FyS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaL-Rn-pXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1532" y="-2.2488755622188905"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="eKK-Bd-Yqn">
+            <objects>
+                <viewController id="Byf-VU-ovp" customClass="WebViewController" customModule="PicturesGoogleTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DdB-WI-wLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZZz-Dj-sAS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="647" id="pn8-FE-fkS"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PjB-kx-xty"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZZz-Dj-sAS" firstAttribute="leading" secondItem="PjB-kx-xty" secondAttribute="leading" id="9xQ-Bh-mHJ"/>
+                            <constraint firstItem="PjB-kx-xty" firstAttribute="bottom" secondItem="ZZz-Dj-sAS" secondAttribute="bottom" id="FQv-7h-zFK"/>
+                            <constraint firstItem="PjB-kx-xty" firstAttribute="trailing" secondItem="ZZz-Dj-sAS" secondAttribute="trailing" id="lmg-ih-SH5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailSiteWebKit" destination="ZZz-Dj-sAS" id="PEX-DE-vTY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqJ-IK-rpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264.8000000000002" y="-2.2488755622188905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SJb-pK-ZlS">

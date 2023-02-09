@@ -16,6 +16,7 @@ struct ImageModel: Decodable {
 struct ImageResult: Decodable {
     let position: Int
     let thumbnail: String
+    let source: String
     let link: String
     let original: String
 }

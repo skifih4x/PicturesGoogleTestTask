@@ -6,18 +6,21 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class ImageCell: UICollectionViewCell {
     
     @IBOutlet weak var mainImage: UIImageView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        mainImage.image = nil
+    }
 
     func configure(with images: ImageResult) {
-        DispatchQueue.global().async {
-            guard let url = URL(string: images.thumbnail) else {return}
-            guard let imageData = try? Data(contentsOf: url) else {return}
-            DispatchQueue.main.async {
-                self.mainImage.image = UIImage(data: imageData)
-            }
-        }
+
+        mainImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        mainImage.sd_setImage(with: URL(string: images.thumbnail))
+//        mainImage.downloaded(from: images.thumbnail)
     }
 }

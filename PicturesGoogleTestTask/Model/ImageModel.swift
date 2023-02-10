@@ -6,7 +6,7 @@
 //
 
 struct ImageModel: Decodable {
-    let imagesResults: [ImageResult]
+    var imagesResults: [ImageResult]
     
     enum CodingKeys: String, CodingKey {
         case imagesResults = "images_results"

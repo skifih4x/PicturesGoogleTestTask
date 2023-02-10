@@ -56,8 +56,8 @@ final class WebViewController: UIViewController, WKUIDelegate {
     
     @objc private func tapRefresh() {
         
-        guard let myUrl = URL(string:  self.referenceSite ?? "") else { return}
+        guard let myUrl = URL(string:  self.referenceSite ?? "") else { return }
         let req = URLRequest(url: myUrl)
-            self.detailSiteWebKit?.load(req)
+        self.detailSiteWebKit?.load(req)
     }
 }

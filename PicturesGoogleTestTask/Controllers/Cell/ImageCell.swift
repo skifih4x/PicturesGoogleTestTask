@@ -16,11 +16,10 @@ final class ImageCell: UICollectionViewCell {
         super.prepareForReuse()
         mainImage.image = nil
     }
-
+    
     func configure(with images: ImageResult) {
-
         mainImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        mainImage.sd_setImage(with: URL(string: images.thumbnail))
-//        mainImage.downloaded(from: images.thumbnail)
+        guard let url = URL(string: images.thumbnail) else { return }
+        mainImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"), options: [.continueInBackground])
     }
 }

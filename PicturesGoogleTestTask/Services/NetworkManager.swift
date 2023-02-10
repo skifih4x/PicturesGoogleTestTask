@@ -10,24 +10,7 @@ import UIKit
 
 final class NetworkManager {
     
-     static let shared = NetworkManager()
-    
-//    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-//        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-//    }
-//    
-//    func downloadImage(from url: URL) {
-//        print("Download Started")
-//        getData(from: url) { data, response, error in
-//            guard let data = data, error == nil else { return }
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            print("Download Finished")
-//            // always update the UI from the main thread
-//            DispatchQueue.main.async() { [weak self] in
-//                self?.imageView.image = UIImage(data: data)
-//            }
-//        }
-//    }
+    static let shared = NetworkManager()
     
     func parseImage(urlString: String, completion: @escaping ( Result <ImageModel, Error> ) -> Void ) {
         guard let url = URL(string: urlString) else { return }
@@ -37,6 +20,7 @@ final class NetworkManager {
                 print(error?.localizedDescription ?? "Error")
                 return
             }
+            
             do {
                 let image = try JSONDecoder().decode(ImageModel.self, from: data)
                 DispatchQueue.main.async {
@@ -45,7 +29,6 @@ final class NetworkManager {
             } catch let error {
                 print(error)
             }
-        }
-        .resume()
+        }.resume()
     }
 }

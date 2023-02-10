@@ -8,5 +8,7 @@
 
 enum Constants: String {
     case url = "https://serpapi.com/search.json?q="
-    case key = "&tbm=isch&ijn=0&api_key=3d5487fd0010706235f1607b8762fd1cad7070bf888e608208cb44cc027c7a38"
+    case key = "&tbm=isch&ijn=0&api_key=c955a0293e0fa4f86972ab2d3048236226cc81be18f7e46951e0c9df9a155a37"
+    case cellId = "imageCell"
+    case detailVCSegue = "detailVC"
 }

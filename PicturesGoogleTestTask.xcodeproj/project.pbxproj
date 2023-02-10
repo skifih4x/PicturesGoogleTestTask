@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0004406829943FDE00596A1C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0004406729943FDE00596A1C /* SDWebImage */; };
+		001577492996CCB500BBA53F /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001577482996CCB500BBA53F /* Extension + String.swift */; };
 		003C0F5629911D7F002EFC41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5529911D7F002EFC41 /* AppDelegate.swift */; };
 		003C0F5829911D7F002EFC41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5729911D7F002EFC41 /* SceneDelegate.swift */; };
 		003C0F5A29911D7F002EFC41 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C0F5929911D7F002EFC41 /* MainViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001577482996CCB500BBA53F /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		003C0F5229911D7F002EFC41 /* PicturesGoogleTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicturesGoogleTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003C0F5529911D7F002EFC41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003C0F5729911D7F002EFC41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001577472996CCA300BBA53F /* Extendison */ = {
+			isa = PBXGroup;
+			children = (
+				001577482996CCB500BBA53F /* Extension + String.swift */,
+			);
+			path = Extendison;
+			sourceTree = "<group>";
+		};
 		003C0F4929911D7F002EFC41 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		003C0F5429911D7F002EFC41 /* PicturesGoogleTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				001577472996CCA300BBA53F /* Extendison */,
 				00570EAE2992697B00291C18 /* Controllers */,
 				00570EAD2992697400291C18 /* View */,
 				00570EA92992693800291C18 /* Services */,
@@ -125,8 +136,8 @@
 			children = (
 				003C0F5929911D7F002EFC41 /* MainViewController.swift */,
 				00570EB52992A76400291C18 /* DetailImageViewController.swift */,
-				00570EB229926B7300291C18 /* Cell */,
 				008F16FA2993CA5200466BC0 /* WebViewController.swift */,
+				00570EB229926B7300291C18 /* Cell */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			files = (
 				003C0F5A29911D7F002EFC41 /* MainViewController.swift in Sources */,
 				008F16FB2993CA5200466BC0 /* WebViewController.swift in Sources */,
+				001577492996CCB500BBA53F /* Extension + String.swift in Sources */,
 				003C0F5629911D7F002EFC41 /* AppDelegate.swift in Sources */,
 				00570EAB2992694B00291C18 /* NetworkManager.swift in Sources */,
 				003C0F5829911D7F002EFC41 /* SceneDelegate.swift in Sources */,

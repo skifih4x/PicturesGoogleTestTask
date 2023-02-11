@@ -20,6 +20,6 @@ final class ImageCell: UICollectionViewCell {
     func configure(with images: ImageResult) {
         mainImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
         guard let url = URL(string: images.thumbnail) else { return }
-        mainImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"), options: [.continueInBackground])
+        mainImage.sd_setImage(with: url)
     }
 }

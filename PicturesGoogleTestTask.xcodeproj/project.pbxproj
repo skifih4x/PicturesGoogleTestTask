@@ -84,11 +84,11 @@
 		003C0F5429911D7F002EFC41 /* PicturesGoogleTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				001577472996CCA300BBA53F /* Extendison */,
 				00570EAE2992697B00291C18 /* Controllers */,
 				00570EAD2992697400291C18 /* View */,
 				00570EA92992693800291C18 /* Services */,
 				00570EA829925B4300291C18 /* Model */,
+				001577472996CCA300BBA53F /* Extendison */,
 				00570EAC2992696900291C18 /* App */,
 				00570EAF29926A4400291C18 /* Resurces */,
 			);

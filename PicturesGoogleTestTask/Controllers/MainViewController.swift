@@ -9,7 +9,7 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    // MARK: UI Elements
+    // MARK: - UI Elements
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -53,25 +53,38 @@ final class MainViewController: UIViewController {
         setColorNavBar() 
     }
     
+    // MARK: Prepare for Segue
     
-    // MARK: Network
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.detailVCSegue.rawValue {
+            guard let detailVC = segue.destination as? DetailImageViewController else { return }
+            guard let indexPath = imagesCollectionView.indexPathsForSelectedItems?.first else { return }
+            detailVC.detailImageModel = imageModel
+            detailVC.imageIndex = indexPath.row
+        }
+    }
+    
+    // MARK: - Network
     
     private func fetchImage(with request: String) {
         activityIndicator.startAnimating()
         NetworkManager.shared.parseImage(urlString: Constants.url.rawValue + request + Constants.key.rawValue) { [weak self] result in
-            switch result {
-            case .success(let success):
-                self?.imageModel = success
-                if success.imagesResults.count > 1 {
+            DispatchQueue.main.async(execute: {
+                switch result {
+                case .success(let success):
+                    self?.imageModel = success
+                    if success.imagesResults.count > 1 {
+                        self?.activityIndicator.stopAnimating()
+                    }
+                case .failure(let failure):
+                    self?.fetchError(with: failure.localizedDescription)
                     self?.activityIndicator.stopAnimating()
                 }
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
+            })
         }
     }
     
-    // MARK: Private Methods
+    // MARK: - Private Methods
     
     private func settingSearchBar() {
         searchBar.searchTextField.backgroundColor = .white
@@ -91,7 +104,7 @@ final class MainViewController: UIViewController {
     
 }
 
-// MARK: UICollectionViewDataSource, UICollectionViewDelegate
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -109,20 +122,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: Constants.detailVCSegue.rawValue, sender: nil)
     }
-    
-    // MARK: Prepare for Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.detailVCSegue.rawValue {
-            guard let detailVC = segue.destination as? DetailImageViewController else { return }
-            guard let indexPath = imagesCollectionView.indexPathsForSelectedItems?.first else { return }
-            detailVC.detailImageModel = imageModel
-            detailVC.imageIndex = indexPath.row
-        }
-    }
 }
 
-// MARK: SearchBarDelegate
+// MARK: - SearchBarDelegate
 
 extension MainViewController: UISearchBarDelegate {
     
@@ -131,13 +133,11 @@ extension MainViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
         searchBar.resignFirstResponder()
         searchBar.endEditing(true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         if task != nil {
             task.cancel()
         }
@@ -154,3 +154,15 @@ extension MainViewController: UISearchBarDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: task)
     }
 }
+
+// MARK: - UIAlertController
+
+extension MainViewController {
+    private func fetchError(with message: String) {
+        let alert = UIAlertController(title: "Проблеммыс с сетью", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+

@@ -20,10 +20,7 @@ final class WebViewController: UIViewController, WKUIDelegate {
     // MARK: Methods Life Cicle
     
     override func loadView() {
-        let webConfig = WKWebViewConfiguration()
-        self.detailSiteWebKit = WKWebView(frame: .zero, configuration: webConfig)
-        self.detailSiteWebKit?.uiDelegate = self
-        self.view = self.detailSiteWebKit
+        loadWebView()
     }
     
     override func viewDidLoad() {
@@ -39,9 +36,21 @@ final class WebViewController: UIViewController, WKUIDelegate {
     
     // MARK: Private Method
     
+    private func loadWebView() {
+        let webConfig = WKWebViewConfiguration()
+        detailSiteWebKit = WKWebView(frame: .zero, configuration: webConfig)
+        detailSiteWebKit?.uiDelegate = self
+        view = detailSiteWebKit
+    }
+    
     private func setNavigationButton() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(tapDone))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(tapRefresh))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done",
+                                                           style: .done,
+                                                           target: self,
+                                                           action: #selector(tapDone))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
+                                                            target: self,
+                                                            action: #selector(tapRefresh))
     }
     
     private func loadSite() {
@@ -55,7 +64,6 @@ final class WebViewController: UIViewController, WKUIDelegate {
     }
     
     @objc private func tapRefresh() {
-        
         guard let myUrl = URL(string:  self.referenceSite ?? "") else { return }
         let req = URLRequest(url: myUrl)
         self.detailSiteWebKit?.load(req)

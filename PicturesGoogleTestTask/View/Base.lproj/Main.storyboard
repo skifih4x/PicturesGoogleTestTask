@@ -14,11 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PicturesGoogleTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="701"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Tpc-Bq-j9m">
+                                <rect key="frame" x="176.66666666666666" y="332" width="37" height="37"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-G9-NuF">
-                                <rect key="frame" x="20" y="56" width="350" height="663"/>
+                                <rect key="frame" x="20" y="56" width="350" height="611"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="MU2-Nl-fAG">
                                     <size key="itemSize" width="100" height="100"/>
@@ -79,15 +82,18 @@
                         <constraints>
                             <constraint firstItem="cVp-G9-NuF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Csv-cP-weJ"/>
                             <constraint firstItem="3sG-jP-OTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JNB-KQ-IzO"/>
+                            <constraint firstItem="Tpc-Bq-j9m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LDa-XH-fUo"/>
                             <constraint firstItem="cVp-G9-NuF" firstAttribute="top" secondItem="3sG-jP-OTb" secondAttribute="bottom" id="ON3-TS-qmK"/>
                             <constraint firstItem="cVp-G9-NuF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="cY1-Dw-CcL"/>
                             <constraint firstItem="3sG-jP-OTb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="evT-13-KuD"/>
                             <constraint firstItem="3sG-jP-OTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="riE-x5-GN3"/>
                             <constraint firstItem="cVp-G9-NuF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wEL-6h-0vp"/>
+                            <constraint firstItem="Tpc-Bq-j9m" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zbS-hX-KOX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search google" id="qn8-F6-X2v"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Tpc-Bq-j9m" id="xUk-4D-iKb"/>
                         <outlet property="imagesCollectionView" destination="cVp-G9-NuF" id="Ga4-S2-hLl"/>
                         <outlet property="searchBar" destination="3sG-jP-OTb" id="zaN-lE-o16"/>
                         <segue destination="Jf6-NA-hwa" kind="show" identifier="detailVC" id="g5T-OU-jcX"/>

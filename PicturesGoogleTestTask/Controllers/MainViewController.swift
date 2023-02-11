@@ -13,17 +13,8 @@ final class MainViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
-    
-    private let activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
-        indicator.color = .gray
-        indicator.hidesWhenStopped = true
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        let transfrom = CGAffineTransform.init(scaleX: 5, y: 5)
-        indicator.transform = transfrom
-        return indicator
-    }()
     
     weak var timer: Timer?
     var position: Int?
@@ -44,13 +35,12 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagesCollectionView.showsVerticalScrollIndicator = false
-        setupActivityIndicator()
         settingSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setColorNavBar() 
+        settingColorNavBar() 
     }
     
     // MARK: Prepare for Segue
@@ -91,17 +81,10 @@ final class MainViewController: UIViewController {
         searchBar.searchTextField.leftView?.tintColor = .black
     }
     
-    private func setColorNavBar() {
+    private func settingColorNavBar() {
         self.navigationController?.navigationBar.backgroundColor = .black
         self.navigationController?.navigationBar.tintColor = .white
     }
-    
-    private func setupActivityIndicator() {
-        view.addSubview(activityIndicator)
-        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    }
-    
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
